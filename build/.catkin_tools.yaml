@@ -1,0 +1,6 @@
+devel_space: /home/rech/wsTcc/devel
+install: false
+install_space: /home/rech/wsTcc/install
+profile: default
+source_space: /home/rech/wsTcc/src
+workspace: /home/rech/wsTcc

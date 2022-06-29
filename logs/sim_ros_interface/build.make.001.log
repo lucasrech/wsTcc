@@ -1,0 +1,29 @@
+[ 43%] Built target generate_ros_code
+[ 47%] [34m[1mGenerating generated/stubs.cpp, generated/stubs.h, generated/plugin.h, generated/stubsPlusPlus.cpp, generated/index.json, generated/reference.html, generated/lua_calltips.cpp, generated/simROS-typecheck.lua[0m
+/home/rech/CoppeliaSim/programming/libPlugin/simStubsGen/generate.py --verbose --xml-file /home/rech/wsTcc/src/simExtROS/meta/callbacks.xml --gen-all /home/rech/wsTcc/build/sim_ros_interface/generated --lua-file /home/rech/wsTcc/src/simExtROS/simROS.lua
+/usr/bin/python3.8 /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen/generate_lua_xml.py /home/rech/wsTcc/src/simExtROS/meta/callbacks.xml /home/rech/wsTcc/src/simExtROS/simROS.lua /home/rech/wsTcc/build/sim_ros_interface/generated/lua.xml
+/usr/bin/python3.8 /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen/merge_xml.py /home/rech/wsTcc/src/simExtROS/meta/callbacks.xml /home/rech/wsTcc/build/sim_ros_interface/generated/lua.xml /home/rech/wsTcc/build/sim_ros_interface/generated/reference.xml
+xsltproc -o /home/rech/wsTcc/build/sim_ros_interface/generated/reference.html /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen/xsl/reference.xsl /home/rech/wsTcc/build/sim_ros_interface/generated/reference.xml
+/usr/bin/python3.8 /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen/generate_lua_calltips.py /home/rech/wsTcc/build/sim_ros_interface/generated/lua.xml /home/rech/wsTcc/build/sim_ros_interface/generated/lua_calltips.cpp
+/usr/bin/python3.8 /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen/generate_lua_typechecker.py /home/rech/wsTcc/src/simExtROS/simROS.lua /home/rech/wsTcc/build/sim_ros_interface/generated/lua.xml /home/rech/wsTcc/build/sim_ros_interface/generated/simROS-typecheck.lua
+/usr/bin/python3.8 /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen/generate_api_index.py /home/rech/wsTcc/build/sim_ros_interface/generated/reference.xml /home/rech/wsTcc/build/sim_ros_interface/generated/index.json
+/usr/bin/python3.8 /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py -p xml_file=/home/rech/wsTcc/src/simExtROS/meta/callbacks.xml -p have_lua_calltips=True -P /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen -p lua_require=simROS-typecheck -i /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen/cpp/stubs.cpp -o /home/rech/wsTcc/build/sim_ros_interface/generated/stubs.cpp
+/usr/bin/python3.8 /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py -p xml_file=/home/rech/wsTcc/src/simExtROS/meta/callbacks.xml -p have_lua_calltips=True -P /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen -p lua_require=simROS-typecheck -i /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen/cpp/stubs.h -o /home/rech/wsTcc/build/sim_ros_interface/generated/stubs.h
+/usr/bin/python3.8 /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py -p xml_file=/home/rech/wsTcc/src/simExtROS/meta/callbacks.xml -p have_lua_calltips=True -P /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen -p lua_require=simROS-typecheck -i /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen/cpp/plugin.h -o /home/rech/wsTcc/build/sim_ros_interface/generated/plugin.h
+/usr/bin/python3.8 /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py -p xml_file=/home/rech/wsTcc/src/simExtROS/meta/callbacks.xml -p have_lua_calltips=True -P /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen -p lua_require=simROS-typecheck -i /home/rech/CoppeliaSim/programming/libPlugin/simStubsGen/cpp/stubsPlusPlus.cpp -o /home/rech/wsTcc/build/sim_ros_interface/generated/stubsPlusPlus.cpp
+[35m[1mScanning dependencies of target simExtROS[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/simExtROS.dir/home/rech/CoppeliaSim/programming/common/simLib.cpp.o[0m
+[ 56%] [32mBuilding CXX object CMakeFiles/simExtROS.dir/generated/stubs.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/simExtROS.dir/home/rech/CoppeliaSim/programming/libPlugin/simPlusPlus/Lib.cpp.o[0m
+[ 65%] [32mBuilding CXX object CMakeFiles/simExtROS.dir/home/rech/CoppeliaSim/programming/libPlugin/simPlusPlus/Handle.cpp.o[0m
+[ 69%] [32mBuilding CXX object CMakeFiles/simExtROS.dir/home/rech/CoppeliaSim/programming/libPlugin/simPlusPlus/Plugin.cpp.o[0m
+[ 73%] [32mBuilding CXX object CMakeFiles/simExtROS.dir/src/ros_msg_builtin_io.cpp.o[0m
+[ 78%] [32mBuilding CXX object CMakeFiles/simExtROS.dir/src/sim_ros_interface.cpp.o[0m
+[ 82%] [32mBuilding CXX object CMakeFiles/simExtROS.dir/generated/ros_srv_io.cpp.o[0m
+[ 86%] [32mBuilding CXX object CMakeFiles/simExtROS.dir/generated/ros_msg_io.cpp.o[0m
+[01m[K/home/rech/CoppeliaSim/programming/libPlugin/simPlusPlus/Plugin.cpp:[m[K In member function ‘[01m[Kvirtual void* sim::Plugin::loadSimLibrary()[m[K’:
+[01m[K/home/rech/CoppeliaSim/programming/libPlugin/simPlusPlus/Plugin.cpp:615:15:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kchar* getcwd(char*, size_t)[m[K’, declared with attribute warn_unused_result [[01;35m[K-Wunused-result[m[K]
+  615 |         [01;35m[Kgetcwd(curDirAndFile, sizeof(curDirAndFile))[m[K;
+      |         [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[ 91%] [32m[1mLinking CXX shared library /home/rech/wsTcc/devel/.private/sim_ros_interface/lib/libsimExtROS.so[0m
+[100%] Built target simExtROS
