@@ -61,10 +61,14 @@ visualization_msgs/Marker.h
 /home/rech/wsTcc/src/tccDrones/src/visualization_msgs/Marker.h
 visualization_msgs/MarkerArray.h
 /home/rech/wsTcc/src/tccDrones/src/visualization_msgs/MarkerArray.h
+std_msgs/Float32.h
+/home/rech/wsTcc/src/tccDrones/src/std_msgs/Float32.h
 geometry_msgs/Pose.h
 /home/rech/wsTcc/src/tccDrones/src/geometry_msgs/Pose.h
 geometry_msgs/Point.h
 /home/rech/wsTcc/src/tccDrones/src/geometry_msgs/Point.h
+geometry_msgs/Quaternion.h
+/home/rech/wsTcc/src/tccDrones/src/geometry_msgs/Quaternion.h
 ar_track_alvar_msgs/AlvarMarkers.h
 /home/rech/wsTcc/src/tccDrones/src/ar_track_alvar_msgs/AlvarMarkers.h
 
