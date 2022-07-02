@@ -83,6 +83,7 @@
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/bond_generate_messages_cpp.dir
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/bond_generate_messages_eus.dir
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir
+/home/rech/wsTcc/build/tccDrones/CMakeFiles/manager_node.dir
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/dynamic_reconfigure_gencfg.dir

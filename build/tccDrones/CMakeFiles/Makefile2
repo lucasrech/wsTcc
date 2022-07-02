@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/rech/wsTcc/build/tccDrones
 
 # The main recursive "all" target.
 all: CMakeFiles/getTagPose_node.dir/all
+all: CMakeFiles/manager_node.dir/all
 all: gtest/all
 
 .PHONY : all
@@ -143,6 +144,7 @@ clean: CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/clean
 clean: CMakeFiles/bond_generate_messages_cpp.dir/clean
 clean: CMakeFiles/bond_generate_messages_eus.dir/clean
 clean: CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/clean
+clean: CMakeFiles/manager_node.dir/clean
 clean: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
 clean: CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/clean
 clean: CMakeFiles/dynamic_reconfigure_gencfg.dir/clean
@@ -2352,6 +2354,33 @@ dynamic_reconfigure_generate_messages_cpp: CMakeFiles/dynamic_reconfigure_genera
 CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/clean:
 	$(MAKE) -f CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/clean
 .PHONY : CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/manager_node.dir
+
+# All Build rule for target.
+CMakeFiles/manager_node.dir/all:
+	$(MAKE) -f CMakeFiles/manager_node.dir/build.make CMakeFiles/manager_node.dir/depend
+	$(MAKE) -f CMakeFiles/manager_node.dir/build.make CMakeFiles/manager_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rech/wsTcc/build/tccDrones/CMakeFiles --progress-num=11,12 "Built target manager_node"
+.PHONY : CMakeFiles/manager_node.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/manager_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rech/wsTcc/build/tccDrones/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/manager_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rech/wsTcc/build/tccDrones/CMakeFiles 0
+.PHONY : CMakeFiles/manager_node.dir/rule
+
+# Convenience name for target.
+manager_node: CMakeFiles/manager_node.dir/rule
+
+.PHONY : manager_node
+
+# clean rule for target.
+CMakeFiles/manager_node.dir/clean:
+	$(MAKE) -f CMakeFiles/manager_node.dir/build.make CMakeFiles/manager_node.dir/clean
+.PHONY : CMakeFiles/manager_node.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/geometry_msgs_generate_messages_nodejs.dir

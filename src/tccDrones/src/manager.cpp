@@ -12,6 +12,8 @@
 #include "geometry_msgs/Quaternion.h"
 #include "ar_track_alvar_msgs/AlvarMarkers.h"
 
+using namespace std;
+
 #define TAG0 0
 #define TAG1 0
 #define TAG2 0
@@ -49,9 +51,18 @@ void tagPoseCallback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr& msg)
   }
 }
 
+void includePoints(std::vector<geometry_msgs::Point>* line_ID0, float x, float y, float z)
+{
+    geometry_msgs::Point point;
+    point.x = x;
+    point.y = y;
+    point.z = z;
+    line_ID0->push_back(point);
+}
+
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "getTagPose");
+    ros::init(argc, argv, "manager");
     ros::NodeHandle nh(""), nh_param("~");
     ros::Rate loop_rate(10);
 
@@ -64,6 +75,8 @@ int main(int argc, char **argv)
 
     tags = nh.subscribe<ar_track_alvar_msgs::AlvarMarkers>("/ar_pose_marker", 1, &tagPoseCallback);
 
+    gotoChild0 = nh.advertise<geometry_msgs::Point>("/child0/position", 1);
+
     std::vector<geometry_msgs::Point> route0;
 
     includePoints(&route0, 1.5, 1.5, 6.0);
@@ -73,60 +86,18 @@ int main(int argc, char **argv)
     includePoints(&route0, 1.5, 1.5, 6.0);
     includePoints(&route0, 0.0, 0.0, 6.0);
 
+    int estado = 0;
+    int estadoRota = 0;
+
+    bool nEnvieiPonto = 1;
+    bool cheguei = 0;
+
     while(ros::ok())
     {
         ros::spinOnce();
 
-        int estado = 0;
+        gotoChild0.publish(route0[0]);
 
-        switch (estado)
-        {
-        case 0:
-            if(flag_square == 0)
-            {
-                //publica o proximo destino
-                goto_pub_ID0.publish(line_ID0[state_square]);
-                goto_pub_ID8.publish(line_ID8[state_square]);
-                //garante que o pid foi atualizado
-                if(pid_flag_ID0 == 0 && pid_flag_ID8 == 0)
-                    flag_square = 1;
-            }
-            else
-            {
-            //verifica se chegou
-                if(pid_flag_ID0 == 1 && pid_flag_ID8 == 1)
-                {
-                    flag_square = 0;
-                    state_square++;
-                    //verifica se terminou a rotina
-                    if(state_square >= line_ID0.size())
-                    {
-                        state_square = 0;
-                        state = PARA_PID;
-                    }
-                }
-            }
-            break;
-        
-        default:
-            break;
-        }
-
-
-
-
-
-
-
-
-
-        // // ROS_INFO("pose X: %f, pose Y: %f, pose Z: %f", tagPoseChild0.x, tagPoseChild0.y, tagPoseChild0.z);
-        // ROS_INFO("Rotacao: %f", toEuler(tagRotChild0).data);
-
-        // pubPoseChild0.publish(tagPoseChild0);
-        // pubRotChild0.publish(toEuler(tagRotChild0));
-        
-        // // ROS_WARN("...Publicado");
         loop_rate.sleep();
     }
     

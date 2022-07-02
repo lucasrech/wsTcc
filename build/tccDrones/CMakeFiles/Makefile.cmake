@@ -378,6 +378,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/bond_generate_messages_cpp.dir/DependInfo.cmake"
   "CMakeFiles/bond_generate_messages_eus.dir/DependInfo.cmake"
   "CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/DependInfo.cmake"
+  "CMakeFiles/manager_node.dir/DependInfo.cmake"
   "CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
   "CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/DependInfo.cmake"
   "CMakeFiles/dynamic_reconfigure_gencfg.dir/DependInfo.cmake"

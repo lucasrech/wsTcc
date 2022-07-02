@@ -1195,6 +1195,19 @@ dynamic_reconfigure_generate_messages_cpp/fast:
 .PHONY : dynamic_reconfigure_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named manager_node
+
+# Build rule for target.
+manager_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 manager_node
+.PHONY : manager_node
+
+# fast build rule for target.
+manager_node/fast:
+	$(MAKE) -f CMakeFiles/manager_node.dir/build.make CMakeFiles/manager_node.dir/build
+.PHONY : manager_node/fast
+
+#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -1481,6 +1494,33 @@ src/getTagPose.cpp.s:
 	$(MAKE) -f CMakeFiles/getTagPose_node.dir/build.make CMakeFiles/getTagPose_node.dir/src/getTagPose.cpp.s
 .PHONY : src/getTagPose.cpp.s
 
+src/manager.o: src/manager.cpp.o
+
+.PHONY : src/manager.o
+
+# target to build an object file
+src/manager.cpp.o:
+	$(MAKE) -f CMakeFiles/manager_node.dir/build.make CMakeFiles/manager_node.dir/src/manager.cpp.o
+.PHONY : src/manager.cpp.o
+
+src/manager.i: src/manager.cpp.i
+
+.PHONY : src/manager.i
+
+# target to preprocess a source file
+src/manager.cpp.i:
+	$(MAKE) -f CMakeFiles/manager_node.dir/build.make CMakeFiles/manager_node.dir/src/manager.cpp.i
+.PHONY : src/manager.cpp.i
+
+src/manager.s: src/manager.cpp.s
+
+.PHONY : src/manager.s
+
+# target to generate assembly for a file
+src/manager.cpp.s:
+	$(MAKE) -f CMakeFiles/manager_node.dir/build.make CMakeFiles/manager_node.dir/src/manager.cpp.s
+.PHONY : src/manager.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1572,6 +1612,7 @@ help:
 	@echo "... bond_generate_messages_cpp"
 	@echo "... bond_generate_messages_eus"
 	@echo "... dynamic_reconfigure_generate_messages_cpp"
+	@echo "... manager_node"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... dynamic_reconfigure_generate_messages_eus"
 	@echo "... dynamic_reconfigure_gencfg"
@@ -1596,6 +1637,9 @@ help:
 	@echo "... src/getTagPose.o"
 	@echo "... src/getTagPose.i"
 	@echo "... src/getTagPose.s"
+	@echo "... src/manager.o"
+	@echo "... src/manager.i"
+	@echo "... src/manager.s"
 .PHONY : help
 
 

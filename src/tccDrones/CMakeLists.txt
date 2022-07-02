@@ -219,3 +219,8 @@ add_executable(getTagPose_node src/getTagPose.cpp)
 target_link_libraries(getTagPose_node ${catkin_LIBRARIES})
 # add_dependencies(getTagPose_node getTagPose_generate_messages_cpp)
 
+add_executable(manager_node src/manager.cpp)
+target_link_libraries(manager_node ${catkin_LIBRARIES})
+# add_dependencies(getTagPose_node getTagPose_generate_messages_cpp)
+
+
