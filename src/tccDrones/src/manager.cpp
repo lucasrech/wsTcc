@@ -14,7 +14,7 @@
 
 using namespace std;
 
-#define TAG0 0
+#define TAG0 10
 #define TAG1 0
 #define TAG2 0
 #define TAG3 0
@@ -79,7 +79,7 @@ int main(int argc, char **argv)
 
     std::vector<geometry_msgs::Point> route0;
 
-    includePoints(&route0, 1.0, 1.0, 6.0);
+    includePoints(&route0, 1.5, 1.5, 6.0);
     includePoints(&route0, -1.5, 1.5, 6.0);
     includePoints(&route0, -1.5, -1.5, 6.0);
     includePoints(&route0, 1.5, -1.5, 6.0);
@@ -89,14 +89,28 @@ int main(int argc, char **argv)
     int estado = 0;
     int estadoRota = 0;
 
-    bool nEnvieiPonto = 1;
-    bool cheguei = 0;
+    int envieiPonto = 0;
+    int cheguei = 0;
+
+    int i;
 
     while(ros::ok())
     {
         ros::spinOnce();
 
-        gotoChild0.publish(route0[0]);
+        if(estadoRota < route0.size())
+        {
+          ROS_INFO("pose X: %f, pose Y: %f, pose Z: %f", route0[estadoRota].x, route0[estadoRota].y, route0[estadoRota].z);
+          gotoChild0.publish(route0[estadoRota]);
+
+          if((abs(tagPoseChild0.x - route0[estadoRota].x) < 0.15) && (abs(tagPoseChild0.y - route0[estadoRota].y) < 0.15))
+            estadoRota++;
+          
+        }
+
+
+        else
+          break;
 
         loop_rate.sleep();
     }
