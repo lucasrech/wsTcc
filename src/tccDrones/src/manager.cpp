@@ -24,6 +24,10 @@ geometry_msgs::Point tagPoseChild1;
 geometry_msgs::Point tagPoseChild2;
 geometry_msgs::Point tagPoseChild3;
 
+geometry_msgs::Point poseMother;
+geometry_msgs::Point poseGPSChild;
+
+
 void tagPoseCallback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr& msg)
 {
   for (int i = 0; i < msg->markers.size(); i++)
@@ -51,6 +55,23 @@ void tagPoseCallback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr& msg)
   }
 }
 
+void MotherPoseCallback(const geometry_msgs::Point::ConstPtr& msg)
+{
+  poseMother.x = msg->x;
+  poseMother.y = msg->y;
+  poseMother.z = msg->z;
+   
+}
+
+void ChildPoseCallback(const geometry_msgs::Point::ConstPtr& msg)
+{
+  poseGPSChild.x = msg->x;
+  poseGPSChild.y = msg->y;
+  poseGPSChild.z = msg->z;
+   
+}
+
+
 void includePoints(std::vector<geometry_msgs::Point>* line_ID0, float x, float y, float z)
 {
     geometry_msgs::Point point;
@@ -72,19 +93,41 @@ int main(int argc, char **argv)
     ros::Publisher gotoChild3;
 
     ros::Subscriber tags;
+    ros::Subscriber posMon;
+    ros::Subscriber posKid;
+
 
     tags = nh.subscribe<ar_track_alvar_msgs::AlvarMarkers>("/ar_pose_marker", 1, &tagPoseCallback);
+    posMon = nh.subscribe<geometry_msgs::Point>("/mother/checkPose", 1, &MotherPoseCallback);
+    posKid = nh.subscribe<geometry_msgs::Point>("/child0/checkPose", 1, &MotherPoseCallback);
 
     gotoChild0 = nh.advertise<geometry_msgs::Point>("/child0/position", 1);
 
     std::vector<geometry_msgs::Point> route0;
+    std::vector<geometry_msgs::Point> route1;
+    std::vector<geometry_msgs::Point> route2;
 
-    includePoints(&route0, 1.5, 1.5, 6.0);
-    includePoints(&route0, -1.5, 1.5, 6.0);
-    includePoints(&route0, -1.5, -1.5, 6.0);
-    includePoints(&route0, 1.5, -1.5, 6.0);
-    includePoints(&route0, 1.5, 1.5, 6.0);
+    includePoints(&route0, 1.0, 1.0, 6.0);
+    includePoints(&route0, -1.0, 1.0, 6.0);
+    includePoints(&route0, -1.0, -1.0, 6.0);
+    includePoints(&route0, 1.0, -1.0, 6.0);
+    includePoints(&route0, 1.0, 1.0, 6.0);
     includePoints(&route0, 0.0, 0.0, 6.0);
+
+    includePoints(&route1, 1.0, 1.0, 6.0);
+    includePoints(&route1, -1.0, -1.0, 6.0);
+    includePoints(&route1, 1.0, -1.0, 6.0);
+    includePoints(&route1, -1.0, 1.0, 6.0);
+    includePoints(&route1, 1.0, 1.0, 6.0);
+    includePoints(&route1, 0.0, 0.0, 6.0);
+
+    includePoints(&route2, 1.0, 1.0, 6.0);
+    includePoints(&route2, -1.0, 1.0, 6.0);
+    includePoints(&route2, -1.0, 0.0, 6.0);
+    includePoints(&route2, 1.0, 0.0, 6.0);
+    includePoints(&route2, 1.0, -1.0, 6.0);
+    includePoints(&route2, -1.0, -1.0, 6.0);
+    includePoints(&route2, 0.0, 0.0, 6.0);
 
     int estado = 0;
     int estadoRota = 0;
@@ -98,19 +141,68 @@ int main(int argc, char **argv)
     {
         ros::spinOnce();
 
-        if(estadoRota < route0.size())
+        switch (estado)
         {
-          ROS_INFO("pose X: %f, pose Y: %f, pose Z: %f", route0[estadoRota].x, route0[estadoRota].y, route0[estadoRota].z);
-          gotoChild0.publish(route0[estadoRota]);
-
-          if((abs(tagPoseChild0.x - route0[estadoRota].x) < 0.15) && (abs(tagPoseChild0.y - route0[estadoRota].y) < 0.15))
-            estadoRota++;
-          
-        }
-
-
-        else
+        case 0:
+          cout << "Quadrado -> 1\nZigzag -> 2\nPercurso -> 3\n" << "Rotina de teste:";
+          cin >> estado;
+          estadoRota = 0;
           break;
+
+        case 1:
+          cout << "QUADRADO\n";
+          if(estadoRota < route0.size())
+          {
+            ROS_INFO("pose X: %f, pose Y: %f, pose Z: %f", route0[estadoRota].x, route0[estadoRota].y, route0[estadoRota].z);
+            gotoChild0.publish(route0[estadoRota]);
+
+            if((abs(tagPoseChild0.x - route0[estadoRota].x) < 0.15) && (abs(tagPoseChild0.y - route0[estadoRota].y) < 0.15))
+              estadoRota++;            
+          }
+          else
+          {
+            system("clear");
+            estado = 0;
+          }
+          break;
+
+        case 2:
+          cout << "ZIGZAG\n";
+          if(estadoRota < route1.size())
+          {
+            ROS_INFO("pose X: %f, pose Y: %f, pose Z: %f", route1[estadoRota].x, route1[estadoRota].y, route1[estadoRota].z);
+            gotoChild0.publish(route1[estadoRota]);
+
+            if((abs(tagPoseChild0.x - route1[estadoRota].x) < 0.15) && (abs(tagPoseChild0.y - route1[estadoRota].y) < 0.15))
+              estadoRota++;            
+          }
+          else
+          {
+            system("clear");
+            estado = 0;
+          }
+          break;
+
+        case 3:
+          cout << "PERCURSO\n";
+          if(estadoRota < route2.size())
+          {
+            ROS_INFO("pose X: %f, pose Y: %f, pose Z: %f", route2[estadoRota].x, route2[estadoRota].y, route2[estadoRota].z);
+            gotoChild0.publish(route2[estadoRota]);
+
+            if((abs(tagPoseChild0.x - route2[estadoRota].x) < 0.15) && (abs(tagPoseChild0.y - route2[estadoRota].y) < 0.15))
+              estadoRota++;            
+          }
+          else
+          {
+            system("clear");
+            estado = 0;
+          }
+          break;
+
+        default:
+          break;
+        }
 
         loop_rate.sleep();
     }

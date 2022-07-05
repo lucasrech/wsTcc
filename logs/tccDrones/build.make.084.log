@@ -1,0 +1,10 @@
+[35m[1mScanning dependencies of target manager_node[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/manager_node.dir/src/manager.cpp.o[0m
+[ 75%] Built target getTagPose_node
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:121:22:[m[K [01;31m[Kerror: [m[K‘[01m[KPARADO[m[K’ was not declared in this scope
+  121 |             estado = [01;31m[KPARADO[m[K;
+      |                      [01;31m[K^~~~~~[m[K
+make[2]: *** [CMakeFiles/manager_node.dir/build.make:63: CMakeFiles/manager_node.dir/src/manager.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2364: CMakeFiles/manager_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
