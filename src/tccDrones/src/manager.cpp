@@ -71,7 +71,6 @@ void ChildPoseCallback(const geometry_msgs::Point::ConstPtr& msg)
    
 }
 
-
 void includePoints(std::vector<geometry_msgs::Point>* line_ID0, float x, float y, float z)
 {
     geometry_msgs::Point point;
@@ -79,6 +78,11 @@ void includePoints(std::vector<geometry_msgs::Point>* line_ID0, float x, float y
     point.y = y;
     point.z = z;
     line_ID0->push_back(point);
+}
+
+void CriaLog()
+{
+  
 }
 
 int main(int argc, char **argv)
