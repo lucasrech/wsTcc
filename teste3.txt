@@ -1,0 +1,1 @@
+tagX;tagY;tagZ;GPSChildX;GPSChildY;GPSChildZ;GPSMotherX;GPSMotherY;GPSMotherZ;pontosX;pontosY;pontosZ

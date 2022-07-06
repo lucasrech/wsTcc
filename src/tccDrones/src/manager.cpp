@@ -1,5 +1,7 @@
 #include <math.h>
 #include <time.h>
+#include <string>
+#include <fstream>
 #include <iostream>
 #include <std_msgs/Float32.h>
 
@@ -26,7 +28,6 @@ geometry_msgs::Point tagPoseChild3;
 
 geometry_msgs::Point poseMother;
 geometry_msgs::Point poseGPSChild;
-
 
 void tagPoseCallback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr& msg)
 {
@@ -59,16 +60,14 @@ void MotherPoseCallback(const geometry_msgs::Point::ConstPtr& msg)
 {
   poseMother.x = msg->x;
   poseMother.y = msg->y;
-  poseMother.z = msg->z;
-   
+  poseMother.z = msg->z; 
 }
 
 void ChildPoseCallback(const geometry_msgs::Point::ConstPtr& msg)
 {
   poseGPSChild.x = msg->x;
   poseGPSChild.y = msg->y;
-  poseGPSChild.z = msg->z;
-   
+  poseGPSChild.z = msg->z;  
 }
 
 void includePoints(std::vector<geometry_msgs::Point>* line_ID0, float x, float y, float z)
@@ -80,13 +79,14 @@ void includePoints(std::vector<geometry_msgs::Point>* line_ID0, float x, float y
     line_ID0->push_back(point);
 }
 
-void CriaLog()
-{
-  
-}
-
 int main(int argc, char **argv)
 {
+    string nameFile;
+    string data;
+    string first ;
+    string second ;
+    ofstream logFile; 
+
     ros::init(argc, argv, "manager");
     ros::NodeHandle nh(""), nh_param("~");
     ros::Rate loop_rate(10);
@@ -99,7 +99,6 @@ int main(int argc, char **argv)
     ros::Subscriber tags;
     ros::Subscriber posMon;
     ros::Subscriber posKid;
-
 
     tags = nh.subscribe<ar_track_alvar_msgs::AlvarMarkers>("/ar_pose_marker", 1, &tagPoseCallback);
     posMon = nh.subscribe<geometry_msgs::Point>("/mother/checkPose", 1, &MotherPoseCallback);
@@ -133,13 +132,10 @@ int main(int argc, char **argv)
     includePoints(&route2, -1.0, -1.0, 6.0);
     includePoints(&route2, 0.0, 0.0, 6.0);
 
+    int i = 1;
     int estado = 0;
     int estadoRota = 0;
-
-    int envieiPonto = 0;
-    int cheguei = 0;
-
-    int i;
+    ofstream * piroca;
 
     while(ros::ok())
     {
@@ -151,14 +147,31 @@ int main(int argc, char **argv)
           cout << "Quadrado -> 1\nZigzag -> 2\nPercurso -> 3\n" << "Rotina de teste:";
           cin >> estado;
           estadoRota = 0;
-          break;
+          time_t rawtime;
+          time (&rawtime);
+          data = ctime (&rawtime);
+          i=1;
+        break;
 
         case 1:
-          cout << "QUADRADO\n";
+          cout << "QUADRADO\n";          
+          if (i)
+          {
+            first = "src/tccDrones/logsPos/log";
+            second = ".csv";
+            nameFile = first + data + second;
+            logFile.open (nameFile, ios::out | ios::app);
+            logFile << "tagX;tagY;tagZ;GPSChildX;GPSChildY;GPSChildZ;GPSMotherX;GPSMotherY;GPSMotherZ;pontosX;pontosY;pontosZ\n";
+            i = 0;
+          }
           if(estadoRota < route0.size())
           {
             ROS_INFO("pose X: %f, pose Y: %f, pose Z: %f", route0[estadoRota].x, route0[estadoRota].y, route0[estadoRota].z);
             gotoChild0.publish(route0[estadoRota]);
+            logFile << tagPoseChild0.x  << ";" << tagPoseChild0.y << ";" << tagPoseChild0.z << ";" <<
+                       poseGPSChild.x   << ";" << poseGPSChild.y  << ";" << poseGPSChild.z  << ";" <<
+                       poseMother.x     << ";" << poseMother.y    << ";" << poseMother.z    << ";" <<
+                       route0[estadoRota].x          << ";" << route0[estadoRota].y         << ";" << route0[estadoRota].z         << "\n";
 
             if((abs(tagPoseChild0.x - route0[estadoRota].x) < 0.15) && (abs(tagPoseChild0.y - route0[estadoRota].y) < 0.15))
               estadoRota++;            
@@ -166,16 +179,30 @@ int main(int argc, char **argv)
           else
           {
             system("clear");
+            logFile.close();
             estado = 0;
-          }
+          }          
           break;
 
         case 2:
           cout << "ZIGZAG\n";
+          if (i)
+          {
+            first = "src/tccDrones/logsPos/log";
+            second = ".csv";
+            nameFile = first + data + second;
+            logFile.open (nameFile, ios::out | ios::app);
+            logFile << "tagX;tagY;tagZ;GPSChildX;GPSChildY;GPSChildZ;GPSMotherX;GPSMotherY;GPSMotherZ;pontosX;pontosY;pontosZ\n";
+            i = 0;
+          }
           if(estadoRota < route1.size())
           {
             ROS_INFO("pose X: %f, pose Y: %f, pose Z: %f", route1[estadoRota].x, route1[estadoRota].y, route1[estadoRota].z);
             gotoChild0.publish(route1[estadoRota]);
+            logFile << tagPoseChild0.x  << ";" << tagPoseChild0.y << ";" << tagPoseChild0.z << ";" <<
+                       poseGPSChild.x   << ";" << poseGPSChild.y  << ";" << poseGPSChild.z  << ";" <<
+                       poseMother.x     << ";" << poseMother.y    << ";" << poseMother.z    << ";" <<
+                       route1[estadoRota].x          << ";" << route1[estadoRota].y         << ";" << route1[estadoRota].z         << "\n";
 
             if((abs(tagPoseChild0.x - route1[estadoRota].x) < 0.15) && (abs(tagPoseChild0.y - route1[estadoRota].y) < 0.15))
               estadoRota++;            
@@ -183,16 +210,30 @@ int main(int argc, char **argv)
           else
           {
             system("clear");
+            logFile.close();
             estado = 0;
           }
           break;
 
         case 3:
           cout << "PERCURSO\n";
+          if (i)
+          {
+            first = "src/tccDrones/logsPos/log";
+            second = ".csv";
+            nameFile = first + data + second;
+            logFile.open (nameFile, ios::out | ios::app);
+            logFile << "tagX;tagY;tagZ;GPSChildX;GPSChildY;GPSChildZ;GPSMotherX;GPSMotherY;GPSMotherZ;pontosX;pontosY;pontosZ\n";
+            i = 0;
+          }
           if(estadoRota < route2.size())
           {
             ROS_INFO("pose X: %f, pose Y: %f, pose Z: %f", route2[estadoRota].x, route2[estadoRota].y, route2[estadoRota].z);
             gotoChild0.publish(route2[estadoRota]);
+            logFile << tagPoseChild0.x  << ";" << tagPoseChild0.y << ";" << tagPoseChild0.z << ";" <<
+                       poseGPSChild.x   << ";" << poseGPSChild.y  << ";" << poseGPSChild.z  << ";" <<
+                       poseMother.x     << ";" << poseMother.y    << ";" << poseMother.z    << ";" <<
+                       route2[estadoRota].x          << ";" << route2[estadoRota].y         << ";" << route2[estadoRota].z         << "\n";
 
             if((abs(tagPoseChild0.x - route2[estadoRota].x) < 0.15) && (abs(tagPoseChild0.y - route2[estadoRota].y) < 0.15))
               estadoRota++;            
@@ -200,6 +241,7 @@ int main(int argc, char **argv)
           else
           {
             system("clear");
+            logFile.close();
             estado = 0;
           }
           break;
@@ -207,9 +249,7 @@ int main(int argc, char **argv)
         default:
           break;
         }
-
         loop_rate.sleep();
-    }
-    
+    }    
     return 0;
 }

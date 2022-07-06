@@ -1,0 +1,12 @@
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:[m[K In function ‘[01m[Kvoid CriaLog()[m[K’:
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:94:16:[m[K [01;31m[Kerror: [m[Kincomplete universal character name \Ub
+   94 |     nameFile = [01;31m[K"\\wsl.localhost\Ubuntu-20.04\home\rech\wsTcc\src\tccDrones\logsPos\logPos"[m[K + data + ".csv";
+      |                [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:94:16:[m[K [01;35m[Kwarning: [m[Kunknown escape sequence: '\h'
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:94:16:[m[K [01;35m[Kwarning: [m[Kunknown escape sequence: '\w'
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:94:16:[m[K [01;35m[Kwarning: [m[Kunknown escape sequence: '\s'
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:94:16:[m[K [01;35m[Kwarning: [m[Kunknown escape sequence: '\l'
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:94:16:[m[K [01;35m[Kwarning: [m[Kunknown escape sequence: '\l'
+make[2]: *** [CMakeFiles/manager_node.dir/build.make:63: CMakeFiles/manager_node.dir/src/manager.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2364: CMakeFiles/manager_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

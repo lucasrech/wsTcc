@@ -1,0 +1,7 @@
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:[m[K In function ‘[01m[Kstd::ofstream* CriaLog()[m[K’:
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:98:12:[m[K [01;35m[Kwarning: [m[Kaddress of local variable ‘[01m[KlogFile[m[K’ returned [[01;35m[K-Wreturn-local-addr[m[K]
+   98 |     return [01;35m[K&logFile[m[K;
+      |            [01;35m[K^~~~~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:86:14:[m[K [01;36m[Knote: [m[Kdeclared here
+   86 |     ofstream [01;36m[KlogFile[m[K;
+      |              [01;36m[K^~~~~~~[m[K

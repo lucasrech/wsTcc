@@ -1,0 +1,53 @@
+[35m[1mScanning dependencies of target manager_node[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/manager_node.dir/src/manager.cpp.o[0m
+[ 75%] Built target getTagPose_node
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:[m[K In function ‘[01m[Kstd::ofstream* CriaLog()[m[K’:
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:98:12:[m[K [01;35m[Kwarning: [m[Kaddress of local variable ‘[01m[KlogFile[m[K’ returned [[01;35m[K-Wreturn-local-addr[m[K]
+   98 |     return [01;35m[K&logFile[m[K;
+      |            [01;35m[K^~~~~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:86:14:[m[K [01;36m[Knote: [m[Kdeclared here
+   86 |     ofstream [01;36m[KlogFile[m[K;
+      |              [01;36m[K^~~~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:203:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kponto[m[K’ was not declared in this scope
+  203 |                        [01;31m[Kponto[m[K.x          << ";" << ponto.y         << ";" << ponto.z         << "\n";
+      |                        [01;31m[K^~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:217:14:[m[K [01;31m[Kerror: [m[Kjump to case label
+  217 |         case [01;31m[K2[m[K:
+      |              [01;31m[K^[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:189:18:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::string second[m[K’
+  189 |           string [01;36m[Ksecond[m[K = ".csv";
+      |                  [01;36m[K^~~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:188:18:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::string first[m[K’
+  188 |           string [01;36m[Kfirst[m[K = "src/tccDrones/logsPos/log";
+      |                  [01;36m[K^~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:186:20:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::ofstream logFile[m[K’
+  186 |           ofstream [01;36m[KlogFile[m[K;
+      |                    [01;36m[K^~~~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:237:14:[m[K [01;31m[Kerror: [m[Kjump to case label
+  237 |         case [01;31m[K3[m[K:
+      |              [01;31m[K^[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:189:18:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::string second[m[K’
+  189 |           string [01;36m[Ksecond[m[K = ".csv";
+      |                  [01;36m[K^~~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:188:18:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::string first[m[K’
+  188 |           string [01;36m[Kfirst[m[K = "src/tccDrones/logsPos/log";
+      |                  [01;36m[K^~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:186:20:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::ofstream logFile[m[K’
+  186 |           ofstream [01;36m[KlogFile[m[K;
+      |                    [01;36m[K^~~~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:257:9:[m[K [01;31m[Kerror: [m[Kjump to case label
+  257 |         [01;31m[Kdefault[m[K:
+      |         [01;31m[K^~~~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:189:18:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::string second[m[K’
+  189 |           string [01;36m[Ksecond[m[K = ".csv";
+      |                  [01;36m[K^~~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:188:18:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::string first[m[K’
+  188 |           string [01;36m[Kfirst[m[K = "src/tccDrones/logsPos/log";
+      |                  [01;36m[K^~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:186:20:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::ofstream logFile[m[K’
+  186 |           ofstream [01;36m[KlogFile[m[K;
+      |                    [01;36m[K^~~~~~~[m[K
+make[2]: *** [CMakeFiles/manager_node.dir/build.make:63: CMakeFiles/manager_node.dir/src/manager.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2364: CMakeFiles/manager_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
