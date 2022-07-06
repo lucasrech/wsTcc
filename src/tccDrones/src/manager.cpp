@@ -102,7 +102,7 @@ int main(int argc, char **argv)
 
     tags = nh.subscribe<ar_track_alvar_msgs::AlvarMarkers>("/ar_pose_marker", 1, &tagPoseCallback);
     posMon = nh.subscribe<geometry_msgs::Point>("/mother/checkPose", 1, &MotherPoseCallback);
-    posKid = nh.subscribe<geometry_msgs::Point>("/child0/checkPose", 1, &MotherPoseCallback);
+    posKid = nh.subscribe<geometry_msgs::Point>("/child0/checkPose", 1, &ChildPoseCallback);
 
     gotoChild0 = nh.advertise<geometry_msgs::Point>("/child0/position", 1);
 
