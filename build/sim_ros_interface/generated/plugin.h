@@ -1,7 +1,0 @@
-#ifndef ROS__PLUGIN_H__INCLUDED
-#define ROS__PLUGIN_H__INCLUDED
-
-#define PLUGIN_NAME "ROS"
-#define PLUGIN_VERSION 0
-
-#endif // ROS__PLUGIN_H__INCLUDED

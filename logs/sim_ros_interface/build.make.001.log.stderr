@@ -1,4 +1,0 @@
-[01m[K/home/rech/CoppeliaSim/programming/libPlugin/simPlusPlus/Plugin.cpp:[m[K In member function ‘[01m[Kvirtual void* sim::Plugin::loadSimLibrary()[m[K’:
-[01m[K/home/rech/CoppeliaSim/programming/libPlugin/simPlusPlus/Plugin.cpp:615:15:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kchar* getcwd(char*, size_t)[m[K’, declared with attribute warn_unused_result [[01;35m[K-Wunused-result[m[K]
-  615 |         [01;35m[Kgetcwd(curDirAndFile, sizeof(curDirAndFile))[m[K;
-      |         [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K

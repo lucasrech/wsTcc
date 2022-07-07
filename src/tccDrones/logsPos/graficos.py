@@ -30,7 +30,7 @@ zlineTagQuadrado = dfQuadrado['GPSChildZ'].values
 
 xlineTagPontos = dfQuadradoPontos['pontosX'].values
 ylineTagPontos = dfQuadradoPontos['pontosY'].values
-zlineTagPontos = dfQuadradoPontos['pontosZ'].values
+zlineTagPontos = dfQuadradoPontos['pontosZ'].values - 3
 
 
 print(dfQuadrado)
@@ -40,7 +40,7 @@ fig = plt.figure()
 ax = plt.axes(projection='3d')
 
 ax.plot3D(xlineTagQuadrado, ylineTagQuadrado, zlineTagQuadrado, 'gray')
-# ax.plot3D(xlineTagPontos, ylineTagPontos, zlineTagPontos, 'green')
+ax.plot3D(xlineTagPontos, ylineTagPontos, zlineTagPontos, 'green')
 
 
 plt.show()

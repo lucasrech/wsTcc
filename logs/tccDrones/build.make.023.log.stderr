@@ -1,6 +1,0 @@
-[01m[K/home/rech/wsTcc/src/tccDrones/src/getTagPose.cpp:29:1:[m[K [01;31m[Kerror: [m[K‘[01m[Klast[m[K’ does not name a type
-   29 | [01;31m[Klast[m[K.z.data = 0;
-      | [01;31m[K^~~~[m[K
-make[2]: *** [CMakeFiles/getTagPose_node.dir/build.make:63: CMakeFiles/getTagPose_node.dir/src/getTagPose.cpp.o] Error 1
-make[1]: *** [CMakeFiles/Makefile2:258: CMakeFiles/getTagPose_node.dir/all] Error 2
-make: *** [Makefile:141: all] Error 2

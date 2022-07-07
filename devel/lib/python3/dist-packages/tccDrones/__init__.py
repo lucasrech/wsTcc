@@ -1,1 +1,0 @@
-/home/rech/wsTcc/devel/.private/tccDrones/lib/python3/dist-packages/tccDrones/__init__.py

@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(tccDrones_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/rech/wsTcc/src/tccDrones/include " STREQUAL " ")
+if(NOT " " STREQUAL " ")
   set(tccDrones_INCLUDE_DIRS "")
-  set(_include_dirs "/home/rech/wsTcc/src/tccDrones/include")
+  set(_include_dirs "")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")

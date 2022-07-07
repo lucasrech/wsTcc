@@ -1,1 +1,0 @@
-/home/rech/wsTcc/devel/.private/sim_ros_interface/lib/pkgconfig/sim_ros_interface.pc

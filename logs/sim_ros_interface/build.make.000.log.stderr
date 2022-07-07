@@ -1,4 +1,0 @@
-error: program "xsltproc" is missing (hint: try "sudo apt install xsltproc")
-make[2]: *** [CMakeFiles/simExtROS.dir/build.make:84: generated/stubs.cpp] Error 1
-make[1]: *** [CMakeFiles/Makefile2:247: CMakeFiles/simExtROS.dir/all] Error 2
-make: *** [Makefile:141: all] Error 2

@@ -1,9 +1,0 @@
-[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:100:2:[m[K [01;31m[Kerror: [m[Kstray â€˜[01m[K\303[m[Kâ€™ in program
-  100 | {[01;31m[KÃ[m[K¾
-      |  [01;31m[K^[m[K
-[01m[K/home/rech/wsTcc/src/tccDrones/src/manager.cpp:100:3:[m[K [01;31m[Kerror: [m[Kstray â€˜[01m[K\276[m[Kâ€™ in program
-  100 | {Ã[01;31m[K¾[m[K
-      |   [01;31m[K^[m[K
-make[2]: *** [CMakeFiles/manager_node.dir/build.make:63: CMakeFiles/manager_node.dir/src/manager.cpp.o] Error 1
-make[1]: *** [CMakeFiles/Makefile2:2364: CMakeFiles/manager_node.dir/all] Error 2
-make: *** [Makefile:141: all] Error 2
