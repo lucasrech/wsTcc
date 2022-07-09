@@ -10,6 +10,9 @@ dfQuadrado = pd.read_csv (r"src\tccDrones\logsPos\logQuadrado.csv", sep=";")
 dfZigzag = pd.read_csv (r"src\tccDrones\logsPos\logZigzag.csv", sep=";")
 dfPercurso = pd.read_csv (r"src\tccDrones\logsPos\logPercurso.csv", sep=";")
 
+dfFollowOne = pd.read_csv (r"src\tccDrones\logsPos\logFollow1.csv", sep=";")
+dfFollowTwo = pd.read_csv (r"src\tccDrones\logsPos\logFollow2.csv", sep=";")
+
 # print(dfPercurso.tail())
 
 # -------------------------------- QUADRADO -------------------------------------------------------------------------
@@ -375,22 +378,86 @@ def ErrosPercurso():
     print("---------------------------------------------------------------------------------------\n")
 # ---------------------------------------------------------------------------------------------------------
 
+# -------------------------------- FOLLOW -------------------------------------------------------------------------
+# dfFollowOne = pd.read_csv (r"src\tccDrones\logsPos\logFollow1.csv", sep=";")
+# dfFollowTwo = pd.read_csv (r"src\tccDrones\logsPos\logFollow2.csv", sep=";")
+
+def Plot3DFollowOne():
+    xlineGPS = dfFollowOne['GPSChildX'].values
+    ylineGPS = dfFollowOne['GPSChildY'].values
+    zlineGPS = dfFollowOne['GPSChildZ'].values
+
+    xlineTag = dfFollowOne['GPSMotherX'].values + dfFollowOne['tagX'].values
+    ylineTag = dfFollowOne['GPSMotherY'].values + dfFollowOne['tagY'].values 
+    zlineTag = dfFollowOne['GPSMotherZ'].values - dfFollowOne['tagZ'].values
+
+    xlinePontos = dfFollowOne['GPSMotherX'].values
+    ylinePontos = dfFollowOne['GPSMotherY'].values
+    zlinePontos = dfFollowOne['GPSMotherZ'].values 
+
+    fig = plt.figure()
+    ax = plt.axes(projection='3d')
+
+    ax.plot3D(xlineGPS, ylineGPS, zlineGPS, 'blue', label='Slave UAV Position')
+    ax.plot3D(xlinePontos, ylinePontos, zlinePontos, 'green', label='Master UAV Position')
+    ax.plot3D(xlineTag, ylineTag, zlineTag, 'red', label='Tag readings')
+
+    ax.set_title("3D Route")
+    ax.set_xlabel('Pose in $X$', fontsize=12)
+    ax.set_ylabel('Pose in $Y$', fontsize=12)
+    ax.set_zlabel('Pose in $Z$', fontsize=12)
+    ax.legend(loc='best', shadow=True, fontsize='small')
+    ax.set_zlim3d([2, 10])
+
+def Plot3DFollowTwo():
+    xlineGPS = dfFollowTwo['GPSChildX'].values
+    ylineGPS = dfFollowTwo['GPSChildY'].values
+    zlineGPS = dfFollowTwo['GPSChildZ'].values
+
+    xlineTag = dfFollowTwo['GPSMotherX'].values + dfFollowTwo['tagX'].values
+    ylineTag = dfFollowTwo['GPSMotherY'].values + dfFollowTwo['tagY'].values 
+    zlineTag = dfFollowTwo['GPSMotherZ'].values - dfFollowTwo['tagZ'].values
+
+    xlinePontos = dfFollowTwo['GPSMotherX'].values
+    ylinePontos = dfFollowTwo['GPSMotherY'].values
+    zlinePontos = dfFollowTwo['GPSMotherZ'].values 
+
+    fig = plt.figure()
+    ax = plt.axes(projection='3d')
+
+    ax.plot3D(xlineGPS, ylineGPS, zlineGPS, 'blue', label='Slave UAV Position')
+    ax.plot3D(xlinePontos, ylinePontos, zlinePontos, 'green', label='Master UAV Position')
+    ax.plot3D(xlineTag, ylineTag, zlineTag, 'red', label='Tag readings')
+
+    ax.set_title("3D Route")
+    ax.set_xlabel('Pose in $X$', fontsize=12)
+    ax.set_ylabel('Pose in $Y$', fontsize=12)
+    ax.set_zlabel('Pose in $Z$', fontsize=12)
+    ax.legend(loc='best', shadow=True, fontsize='small')
+    ax.set_zlim3d([2, 10])
+
+
+# ---------------------------------------------------------------------------------------------------------
+
 # ---------------------------------------------------------------------------------------------------------
 def main():
-    ErrosQuadrado()
-    Plot3DGPSChildPontosQuadrado()
-    PlotXYGPSChildPontosQuadrado()
-    PlotZGPSChildPontosQuadrado()
+    # ErrosQuadrado()
+    # Plot3DGPSChildPontosQuadrado()
+    # PlotXYGPSChildPontosQuadrado()
+    # PlotZGPSChildPontosQuadrado()
     
-    ErrosZigzag()
-    Plot3DGPSChildPontosZigzag()
-    PlotXYGPSChildPontosZigzag()
-    PlotZGPSChildPontosZigzag()
+    # ErrosZigzag()
+    # Plot3DGPSChildPontosZigzag()
+    # PlotXYGPSChildPontosZigzag()
+    # PlotZGPSChildPontosZigzag()
 
-    ErrosPercurso()
-    Plot3DGPSChildPontosPercurso()
-    PlotXYGPSChildPontosPercurso()
-    PlotZGPSChildPontosPercurso()    
+    # ErrosPercurso()
+    # Plot3DGPSChildPontosPercurso()
+    # PlotXYGPSChildPontosPercurso()
+    # PlotZGPSChildPontosPercurso()
+
+    Plot3DFollowOne()
+    Plot3DFollowTwo()    
     
     plt.show()
 
