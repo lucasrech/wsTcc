@@ -96,6 +96,9 @@ int main(int argc, char **argv)
     ros::Publisher gotoChild2;
     ros::Publisher gotoChild3;
 
+    ros::Publisher gotoMother;
+
+
     ros::Subscriber tags;
     ros::Subscriber posMon;
     ros::Subscriber posKid;
@@ -106,9 +109,14 @@ int main(int argc, char **argv)
 
     gotoChild0 = nh.advertise<geometry_msgs::Point>("/child0/position", 1);
 
+    gotoMother = nh.advertise<geometry_msgs::Point>("/mother/position", 1);
+
+
     std::vector<geometry_msgs::Point> route0;
     std::vector<geometry_msgs::Point> route1;
     std::vector<geometry_msgs::Point> route2;
+    std::vector<geometry_msgs::Point> route3;
+
 
     includePoints(&route0, 1.0, 1.0, 6.0);
     includePoints(&route0, -1.0, 1.0, 6.0);
@@ -132,7 +140,24 @@ int main(int argc, char **argv)
     includePoints(&route2, -1.0, -1.0, 6.0);
     includePoints(&route2, 0.0, 0.0, 6.0);
 
+    // includePoints(&route3, 1.0, 0.0, 9.0);
+    // includePoints(&route3, 1.0, 2.0, 9.0);
+    // includePoints(&route3, 2.0, 2.0, 9.0);
+    // includePoints(&route3, 2.0, -2.0, 9.0);
+    // includePoints(&route3, 3.0, -2.0, 9.0);
+    // includePoints(&route3, 3.0, 0.0, 9.0);
+    // includePoints(&route3, 4.0, 0.0, 9.0);
+
+    includePoints(&route3, 2.0, 2.0, 9.0);
+    includePoints(&route3, -2.0, 2.0, 9.0);
+    includePoints(&route3, -2.0, -2.0, 9.0);
+    includePoints(&route3, 2.0, -2.0, 9.0);
+    includePoints(&route3, 2.0, 2.0, 9.0);
+    includePoints(&route3, 0.0, 0.0, 9.0);
+
+
     int i = 1;
+    int j = 1;
     int estado = 0;
     int estadoRota = 0;
     ofstream * piroca;
@@ -150,7 +175,8 @@ int main(int argc, char **argv)
           time_t rawtime;
           time (&rawtime);
           data = ctime (&rawtime);
-          i=1;
+          i=0;
+          j=1;
         break;
 
         case 1:
@@ -168,10 +194,10 @@ int main(int argc, char **argv)
           {
             ROS_INFO("pose X: %f, pose Y: %f, pose Z: %f", route0[estadoRota].x, route0[estadoRota].y, route0[estadoRota].z);
             gotoChild0.publish(route0[estadoRota]);
-            logFile << tagPoseChild0.x  << ";" << tagPoseChild0.y << ";" << tagPoseChild0.z << ";" <<
-                       poseGPSChild.x   << ";" << poseGPSChild.y  << ";" << poseGPSChild.z  << ";" <<
-                       poseMother.x     << ";" << poseMother.y    << ";" << poseMother.z    << ";" <<
-                       route0[estadoRota].x          << ";" << route0[estadoRota].y         << ";" << route0[estadoRota].z         << "\n";
+            // logFile << tagPoseChild0.x  << ";" << tagPoseChild0.y << ";" << tagPoseChild0.z << ";" <<
+            //            poseGPSChild.x   << ";" << poseGPSChild.y  << ";" << poseGPSChild.z  << ";" <<
+            //            poseMother.x     << ";" << poseMother.y    << ";" << poseMother.z    << ";" <<
+            //            route0[estadoRota].x          << ";" << route0[estadoRota].y         << ";" << route0[estadoRota].z         << "\n";
 
             if((abs(tagPoseChild0.x - route0[estadoRota].x) < 0.15) && (abs(tagPoseChild0.y - route0[estadoRota].y) < 0.15))
               estadoRota++;            
@@ -179,7 +205,7 @@ int main(int argc, char **argv)
           else
           {
             system("clear");
-            logFile.close();
+            // logFile.close();
             estado = 0;
           }          
           break;
@@ -199,10 +225,10 @@ int main(int argc, char **argv)
           {
             ROS_INFO("pose X: %f, pose Y: %f, pose Z: %f", route1[estadoRota].x, route1[estadoRota].y, route1[estadoRota].z);
             gotoChild0.publish(route1[estadoRota]);
-            logFile << tagPoseChild0.x  << ";" << tagPoseChild0.y << ";" << tagPoseChild0.z << ";" <<
-                       poseGPSChild.x   << ";" << poseGPSChild.y  << ";" << poseGPSChild.z  << ";" <<
-                       poseMother.x     << ";" << poseMother.y    << ";" << poseMother.z    << ";" <<
-                       route1[estadoRota].x          << ";" << route1[estadoRota].y         << ";" << route1[estadoRota].z         << "\n";
+            // logFile << tagPoseChild0.x  << ";" << tagPoseChild0.y << ";" << tagPoseChild0.z << ";" <<
+            //            poseGPSChild.x   << ";" << poseGPSChild.y  << ";" << poseGPSChild.z  << ";" <<
+            //            poseMother.x     << ";" << poseMother.y    << ";" << poseMother.z    << ";" <<
+            //            route1[estadoRota].x          << ";" << route1[estadoRota].y         << ";" << route1[estadoRota].z         << "\n";
 
             if((abs(tagPoseChild0.x - route1[estadoRota].x) < 0.15) && (abs(tagPoseChild0.y - route1[estadoRota].y) < 0.15))
               estadoRota++;            
@@ -210,7 +236,7 @@ int main(int argc, char **argv)
           else
           {
             system("clear");
-            logFile.close();
+            // logFile.close();
             estado = 0;
           }
           break;
@@ -230,12 +256,43 @@ int main(int argc, char **argv)
           {
             ROS_INFO("pose X: %f, pose Y: %f, pose Z: %f", route2[estadoRota].x, route2[estadoRota].y, route2[estadoRota].z);
             gotoChild0.publish(route2[estadoRota]);
+            // logFile << tagPoseChild0.x  << ";" << tagPoseChild0.y << ";" << tagPoseChild0.z << ";" <<
+            //            poseGPSChild.x   << ";" << poseGPSChild.y  << ";" << poseGPSChild.z  << ";" <<
+            //            poseMother.x     << ";" << poseMother.y    << ";" << poseMother.z    << ";" <<
+            //            route2[estadoRota].x          << ";" << route2[estadoRota].y         << ";" << route2[estadoRota].z         << "\n";
+
+            if((abs(tagPoseChild0.x - route2[estadoRota].x) < 0.15) && (abs(tagPoseChild0.y - route2[estadoRota].y) < 0.15))
+              estadoRota++;            
+          }
+          else
+          {
+            system("clear");
+            // logFile.close();
+            estado = 0;
+          }
+          break;
+
+        case 4:
+          cout << "FOLLOW\n";
+          if (j)
+          {
+            first = "src/tccDrones/logsPos/log";
+            second = ".csv";
+            nameFile = first + data + second;
+            logFile.open (nameFile, ios::out | ios::app);
+            logFile << "tagX;tagY;tagZ;GPSChildX;GPSChildY;GPSChildZ;GPSMotherX;GPSMotherY;GPSMotherZ;pontosX;pontosY;pontosZ\n";
+            j = 0;
+          }
+          if(estadoRota < route3.size())
+          {
+            ROS_INFO("pose X: %f, pose Y: %f, pose Z: %f", route3[estadoRota].x, route3[estadoRota].y, route3[estadoRota].z);
+            gotoMother.publish(route3[estadoRota]);
             logFile << tagPoseChild0.x  << ";" << tagPoseChild0.y << ";" << tagPoseChild0.z << ";" <<
                        poseGPSChild.x   << ";" << poseGPSChild.y  << ";" << poseGPSChild.z  << ";" <<
                        poseMother.x     << ";" << poseMother.y    << ";" << poseMother.z    << ";" <<
-                       route2[estadoRota].x          << ";" << route2[estadoRota].y         << ";" << route2[estadoRota].z         << "\n";
+                       route3[estadoRota].x          << ";" << route3[estadoRota].y         << ";" << route3[estadoRota].z << "\n";
 
-            if((abs(tagPoseChild0.x - route2[estadoRota].x) < 0.15) && (abs(tagPoseChild0.y - route2[estadoRota].y) < 0.15))
+            if((abs(poseMother.x - route3[estadoRota].x) < 0.15) && (abs(poseMother.y - route3[estadoRota].y) < 0.15))
               estadoRota++;            
           }
           else
