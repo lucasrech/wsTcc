@@ -16,7 +16,7 @@ using namespace std;
 
 #define TAG0 10
 #define TAG1 0
-#define TAG2 0
+#define TAG2 13
 #define TAG3 0
 
 geometry_msgs::Point tagPoseChild0;
@@ -35,28 +35,33 @@ void tagPoseCallback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr& msg)
 {
   for (int i = 0; i < msg->markers.size(); i++)
   {
+    // ROS_INFO("Tag: %d", msg->markers[i].id);
     if(msg->markers[i].id == TAG0){
-      // if(abs(tagPoseChild0.z - last.z) > 0.3)
-      // {
-        tagPoseChild0.x = msg->markers[i].pose.pose.position.x;
-        tagPoseChild0.y = msg->markers[i].pose.pose.position.y;
-        tagPoseChild0.z = msg->markers[i].pose.pose.position.z;
-        tagRotChild0.x = msg->markers[i].pose.pose.orientation.x;
-        tagRotChild0.y = msg->markers[i].pose.pose.orientation.y;
-        tagRotChild0.z = msg->markers[i].pose.pose.orientation.z;
-        tagRotChild0.w = msg->markers[i].pose.pose.orientation.w;
-      // }
-      // last = tagPoseChild0; 
+      tagPoseChild0.x = msg->markers[i].pose.pose.position.x;
+      tagPoseChild0.y = msg->markers[i].pose.pose.position.y;
+      tagPoseChild0.z = msg->markers[i].pose.pose.position.z;
+      tagRotChild0.x = msg->markers[i].pose.pose.orientation.x;
+      tagRotChild0.y = msg->markers[i].pose.pose.orientation.y;
+      tagRotChild0.z = msg->markers[i].pose.pose.orientation.z;
+      tagRotChild0.w = msg->markers[i].pose.pose.orientation.w;
     }
     if(msg->markers[i].id == TAG1){
       tagPoseChild1.x = msg->markers[i].pose.pose.position.x;
       tagPoseChild1.y = msg->markers[i].pose.pose.position.y;
       tagPoseChild1.z = msg->markers[i].pose.pose.position.z;
+      tagRotChild1.x = msg->markers[i].pose.pose.orientation.x;
+      tagRotChild1.y = msg->markers[i].pose.pose.orientation.y;
+      tagRotChild1.z = msg->markers[i].pose.pose.orientation.z;
+      tagRotChild1.w = msg->markers[i].pose.pose.orientation.w;
     }
     if(msg->markers[i].id == TAG2){
       tagPoseChild2.x = msg->markers[i].pose.pose.position.x;
       tagPoseChild2.y = msg->markers[i].pose.pose.position.y;
       tagPoseChild2.z = msg->markers[i].pose.pose.position.z;
+      tagRotChild2.x = msg->markers[i].pose.pose.orientation.x;
+      tagRotChild2.y = msg->markers[i].pose.pose.orientation.y;
+      tagRotChild2.z = msg->markers[i].pose.pose.orientation.z;
+      tagRotChild2.w = msg->markers[i].pose.pose.orientation.w;
     }
     if(msg->markers[i].id == TAG3){
       tagPoseChild3.x = msg->markers[i].pose.pose.position.x;
@@ -116,11 +121,17 @@ int main(int argc, char **argv)
     {
         ros::spinOnce();
 
-        // ROS_INFO("pose X: %f, pose Y: %f, pose Z: %f", tagPoseChild0.x, tagPoseChild0.y, tagPoseChild0.z);
-        ROS_INFO("Rotacao: %f", toEuler(tagRotChild0).data);
+        // ROS_INFO("pose X: %f, pose Y: %f, pose Z: %f", tagPoseChild2.x, tagPoseChild2.y, tagPoseChild2.z);
+        // ROS_INFO("Rotacao: %f", toEuler(tagRotChild0).data);
 
         pubPoseChild0.publish(tagPoseChild0);
         pubRotChild0.publish(toEuler(tagRotChild0));
+
+        pubPoseChild1.publish(tagPoseChild1);
+        pubRotChild1.publish(toEuler(tagRotChild1));
+
+        pubPoseChild2.publish(tagPoseChild2);
+        pubRotChild2.publish(toEuler(tagRotChild2));
         
         // ROS_WARN("...Publicado");
 
