@@ -17,7 +17,7 @@ using namespace std;
 #define TAG0 10
 #define TAG1 0
 #define TAG2 13
-#define TAG3 0
+#define TAG3 4
 
 geometry_msgs::Point tagPoseChild0;
 geometry_msgs::Point tagPoseChild1;
@@ -67,6 +67,10 @@ void tagPoseCallback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr& msg)
       tagPoseChild3.x = msg->markers[i].pose.pose.position.x;
       tagPoseChild3.y = msg->markers[i].pose.pose.position.y;
       tagPoseChild3.z = msg->markers[i].pose.pose.position.z;
+      tagRotChild3.x = msg->markers[i].pose.pose.orientation.x;
+      tagRotChild3.y = msg->markers[i].pose.pose.orientation.y;
+      tagRotChild3.z = msg->markers[i].pose.pose.orientation.z;
+      tagRotChild3.w = msg->markers[i].pose.pose.orientation.w;
     }
   }
 }
@@ -132,6 +136,9 @@ int main(int argc, char **argv)
 
         pubPoseChild2.publish(tagPoseChild2);
         pubRotChild2.publish(toEuler(tagRotChild2));
+
+        pubPoseChild3.publish(tagPoseChild3);
+        pubRotChild3.publish(toEuler(tagRotChild3));
         
         // ROS_WARN("...Publicado");
 
