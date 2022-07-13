@@ -223,4 +223,12 @@ add_executable(manager_node src/manager.cpp)
 target_link_libraries(manager_node ${catkin_LIBRARIES})
 # add_dependencies(getTagPose_node getTagPose_generate_messages_cpp)
 
+add_executable(manager_multiplos_node src/managerMultiplos.cpp)
+target_link_libraries(manager_multiplos_node ${catkin_LIBRARIES})
+# add_dependencies(getTagPose_node getTagPose_generate_messages_cpp)
+
+add_executable(tag_bag_node src/tagBag.cpp)
+target_link_libraries(tag_bag_node ${catkin_LIBRARIES})
+# add_dependencies(getTagPose_node getTagPose_generate_messages_cpp)
+
 

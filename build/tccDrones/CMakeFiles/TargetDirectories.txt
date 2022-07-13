@@ -1,6 +1,7 @@
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/install/strip.dir
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/install/local.dir
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/list_install_components.dir
+/home/rech/wsTcc/build/tccDrones/CMakeFiles/manager_multiplos_node.dir
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/visualization_msgs_generate_messages_lisp.dir
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/getTagPose_node.dir
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir
@@ -53,6 +54,7 @@
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/sensor_msgs_generate_messages_py.dir
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/topic_tools_generate_messages_py.dir
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/roscpp_generate_messages_cpp.dir
+/home/rech/wsTcc/build/tccDrones/CMakeFiles/tag_bag_node.dir
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/roscpp_generate_messages_eus.dir
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
 /home/rech/wsTcc/build/tccDrones/CMakeFiles/geometry_msgs_generate_messages_lisp.dir

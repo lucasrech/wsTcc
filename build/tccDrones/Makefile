@@ -168,6 +168,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named manager_multiplos_node
+
+# Build rule for target.
+manager_multiplos_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 manager_multiplos_node
+.PHONY : manager_multiplos_node
+
+# fast build rule for target.
+manager_multiplos_node/fast:
+	$(MAKE) -f CMakeFiles/manager_multiplos_node.dir/build.make CMakeFiles/manager_multiplos_node.dir/build
+.PHONY : manager_multiplos_node/fast
+
+#=============================================================================
 # Target rules for targets named visualization_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -816,6 +829,19 @@ roscpp_generate_messages_cpp: cmake_check_build_system
 roscpp_generate_messages_cpp/fast:
 	$(MAKE) -f CMakeFiles/roscpp_generate_messages_cpp.dir/build.make CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named tag_bag_node
+
+# Build rule for target.
+tag_bag_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tag_bag_node
+.PHONY : tag_bag_node
+
+# fast build rule for target.
+tag_bag_node/fast:
+	$(MAKE) -f CMakeFiles/tag_bag_node.dir/build.make CMakeFiles/tag_bag_node.dir/build
+.PHONY : tag_bag_node/fast
 
 #=============================================================================
 # Target rules for targets named roscpp_generate_messages_eus
@@ -1521,6 +1547,60 @@ src/manager.cpp.s:
 	$(MAKE) -f CMakeFiles/manager_node.dir/build.make CMakeFiles/manager_node.dir/src/manager.cpp.s
 .PHONY : src/manager.cpp.s
 
+src/managerMultiplos.o: src/managerMultiplos.cpp.o
+
+.PHONY : src/managerMultiplos.o
+
+# target to build an object file
+src/managerMultiplos.cpp.o:
+	$(MAKE) -f CMakeFiles/manager_multiplos_node.dir/build.make CMakeFiles/manager_multiplos_node.dir/src/managerMultiplos.cpp.o
+.PHONY : src/managerMultiplos.cpp.o
+
+src/managerMultiplos.i: src/managerMultiplos.cpp.i
+
+.PHONY : src/managerMultiplos.i
+
+# target to preprocess a source file
+src/managerMultiplos.cpp.i:
+	$(MAKE) -f CMakeFiles/manager_multiplos_node.dir/build.make CMakeFiles/manager_multiplos_node.dir/src/managerMultiplos.cpp.i
+.PHONY : src/managerMultiplos.cpp.i
+
+src/managerMultiplos.s: src/managerMultiplos.cpp.s
+
+.PHONY : src/managerMultiplos.s
+
+# target to generate assembly for a file
+src/managerMultiplos.cpp.s:
+	$(MAKE) -f CMakeFiles/manager_multiplos_node.dir/build.make CMakeFiles/manager_multiplos_node.dir/src/managerMultiplos.cpp.s
+.PHONY : src/managerMultiplos.cpp.s
+
+src/tagBag.o: src/tagBag.cpp.o
+
+.PHONY : src/tagBag.o
+
+# target to build an object file
+src/tagBag.cpp.o:
+	$(MAKE) -f CMakeFiles/tag_bag_node.dir/build.make CMakeFiles/tag_bag_node.dir/src/tagBag.cpp.o
+.PHONY : src/tagBag.cpp.o
+
+src/tagBag.i: src/tagBag.cpp.i
+
+.PHONY : src/tagBag.i
+
+# target to preprocess a source file
+src/tagBag.cpp.i:
+	$(MAKE) -f CMakeFiles/tag_bag_node.dir/build.make CMakeFiles/tag_bag_node.dir/src/tagBag.cpp.i
+.PHONY : src/tagBag.cpp.i
+
+src/tagBag.s: src/tagBag.cpp.s
+
+.PHONY : src/tagBag.s
+
+# target to generate assembly for a file
+src/tagBag.cpp.s:
+	$(MAKE) -f CMakeFiles/tag_bag_node.dir/build.make CMakeFiles/tag_bag_node.dir/src/tagBag.cpp.s
+.PHONY : src/tagBag.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1530,6 +1610,7 @@ help:
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... list_install_components"
+	@echo "... manager_multiplos_node"
 	@echo "... visualization_msgs_generate_messages_lisp"
 	@echo "... getTagPose_node"
 	@echo "... tf2_msgs_generate_messages_nodejs"
@@ -1582,6 +1663,7 @@ help:
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... topic_tools_generate_messages_py"
 	@echo "... roscpp_generate_messages_cpp"
+	@echo "... tag_bag_node"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
@@ -1640,6 +1722,12 @@ help:
 	@echo "... src/manager.o"
 	@echo "... src/manager.i"
 	@echo "... src/manager.s"
+	@echo "... src/managerMultiplos.o"
+	@echo "... src/managerMultiplos.i"
+	@echo "... src/managerMultiplos.s"
+	@echo "... src/tagBag.o"
+	@echo "... src/tagBag.i"
+	@echo "... src/tagBag.s"
 .PHONY : help
 
 

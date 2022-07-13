@@ -53,7 +53,9 @@ CMAKE_BINARY_DIR = /home/rech/wsTcc/build/tccDrones
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/manager_multiplos_node.dir/all
 all: CMakeFiles/getTagPose_node.dir/all
+all: CMakeFiles/tag_bag_node.dir/all
 all: CMakeFiles/manager_node.dir/all
 all: gtest/all
 
@@ -65,6 +67,7 @@ preinstall: gtest/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/manager_multiplos_node.dir/clean
 clean: CMakeFiles/visualization_msgs_generate_messages_lisp.dir/clean
 clean: CMakeFiles/getTagPose_node.dir/clean
 clean: CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/clean
@@ -115,6 +118,7 @@ clean: CMakeFiles/tf2_msgs_generate_messages_eus.dir/clean
 clean: CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
 clean: CMakeFiles/topic_tools_generate_messages_py.dir/clean
 clean: CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+clean: CMakeFiles/tag_bag_node.dir/clean
 clean: CMakeFiles/roscpp_generate_messages_eus.dir/clean
 clean: CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
 clean: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
@@ -221,6 +225,33 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest_main.dir/clean
 gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 
 .PHONY : gtest/googletest/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/manager_multiplos_node.dir
+
+# All Build rule for target.
+CMakeFiles/manager_multiplos_node.dir/all:
+	$(MAKE) -f CMakeFiles/manager_multiplos_node.dir/build.make CMakeFiles/manager_multiplos_node.dir/depend
+	$(MAKE) -f CMakeFiles/manager_multiplos_node.dir/build.make CMakeFiles/manager_multiplos_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rech/wsTcc/build/tccDrones/CMakeFiles --progress-num=11,12 "Built target manager_multiplos_node"
+.PHONY : CMakeFiles/manager_multiplos_node.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/manager_multiplos_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rech/wsTcc/build/tccDrones/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/manager_multiplos_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rech/wsTcc/build/tccDrones/CMakeFiles 0
+.PHONY : CMakeFiles/manager_multiplos_node.dir/rule
+
+# Convenience name for target.
+manager_multiplos_node: CMakeFiles/manager_multiplos_node.dir/rule
+
+.PHONY : manager_multiplos_node
+
+# clean rule for target.
+CMakeFiles/manager_multiplos_node.dir/clean:
+	$(MAKE) -f CMakeFiles/manager_multiplos_node.dir/build.make CMakeFiles/manager_multiplos_node.dir/clean
+.PHONY : CMakeFiles/manager_multiplos_node.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/visualization_msgs_generate_messages_lisp.dir
@@ -1573,6 +1604,33 @@ CMakeFiles/roscpp_generate_messages_cpp.dir/clean:
 .PHONY : CMakeFiles/roscpp_generate_messages_cpp.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/tag_bag_node.dir
+
+# All Build rule for target.
+CMakeFiles/tag_bag_node.dir/all:
+	$(MAKE) -f CMakeFiles/tag_bag_node.dir/build.make CMakeFiles/tag_bag_node.dir/depend
+	$(MAKE) -f CMakeFiles/tag_bag_node.dir/build.make CMakeFiles/tag_bag_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rech/wsTcc/build/tccDrones/CMakeFiles --progress-num=15,16 "Built target tag_bag_node"
+.PHONY : CMakeFiles/tag_bag_node.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/tag_bag_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rech/wsTcc/build/tccDrones/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/tag_bag_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rech/wsTcc/build/tccDrones/CMakeFiles 0
+.PHONY : CMakeFiles/tag_bag_node.dir/rule
+
+# Convenience name for target.
+tag_bag_node: CMakeFiles/tag_bag_node.dir/rule
+
+.PHONY : tag_bag_node
+
+# clean rule for target.
+CMakeFiles/tag_bag_node.dir/clean:
+	$(MAKE) -f CMakeFiles/tag_bag_node.dir/build.make CMakeFiles/tag_bag_node.dir/clean
+.PHONY : CMakeFiles/tag_bag_node.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/roscpp_generate_messages_eus.dir
 
 # All Build rule for target.
@@ -2362,7 +2420,7 @@ CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/clean:
 CMakeFiles/manager_node.dir/all:
 	$(MAKE) -f CMakeFiles/manager_node.dir/build.make CMakeFiles/manager_node.dir/depend
 	$(MAKE) -f CMakeFiles/manager_node.dir/build.make CMakeFiles/manager_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rech/wsTcc/build/tccDrones/CMakeFiles --progress-num=11,12 "Built target manager_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rech/wsTcc/build/tccDrones/CMakeFiles --progress-num=13,14 "Built target manager_node"
 .PHONY : CMakeFiles/manager_node.dir/all
 
 # Build rule for subdir invocation for target.

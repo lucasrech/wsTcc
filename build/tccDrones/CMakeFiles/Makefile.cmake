@@ -299,6 +299,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/manager_multiplos_node.dir/DependInfo.cmake"
   "CMakeFiles/visualization_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "CMakeFiles/getTagPose_node.dir/DependInfo.cmake"
   "CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
@@ -349,6 +350,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/sensor_msgs_generate_messages_py.dir/DependInfo.cmake"
   "CMakeFiles/topic_tools_generate_messages_py.dir/DependInfo.cmake"
   "CMakeFiles/roscpp_generate_messages_cpp.dir/DependInfo.cmake"
+  "CMakeFiles/tag_bag_node.dir/DependInfo.cmake"
   "CMakeFiles/roscpp_generate_messages_eus.dir/DependInfo.cmake"
   "CMakeFiles/geometry_msgs_generate_messages_cpp.dir/DependInfo.cmake"
   "CMakeFiles/geometry_msgs_generate_messages_lisp.dir/DependInfo.cmake"
