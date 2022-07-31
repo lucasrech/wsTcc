@@ -1,5 +1,0 @@
-[35m[1mScanning dependencies of target getTagPose_node[0m
-[ 75%] Built target manager_node
-[ 75%] [32mBuilding CXX object CMakeFiles/getTagPose_node.dir/src/getTagPose.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /home/rech/wsTcc/devel/.private/tccDrones/lib/tccDrones/getTagPose_node[0m
-[100%] Built target getTagPose_node

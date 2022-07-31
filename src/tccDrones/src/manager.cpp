@@ -160,7 +160,7 @@ int main(int argc, char **argv)
     int j = 1;
     int estado = 0;
     int estadoRota = 0;
-    ofstream * piroca;
+    
 
     while(ros::ok())
     {

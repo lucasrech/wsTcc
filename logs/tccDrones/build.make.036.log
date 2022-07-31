@@ -1,0 +1,21 @@
+[35m[1mScanning dependencies of target manager_multiplos_node[0m
+[ 12%] [32mBuilding CXX object CMakeFiles/manager_multiplos_node.dir/src/managerMultiplos.cpp.o[0m
+[ 62%] Built target manager_node
+[ 62%] Built target tag_bag_node
+[ 87%] Built target getTagPose_node
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:236:12:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kstd::string data[m[K’
+  236 |     string [01;31m[Kdata[m[K;
+      |            [01;31m[K^~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:110:12:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string data[m[K’ previously declared here
+  110 |     string [01;36m[Kdata[m[K;
+      |            [01;36m[K^~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:238:12:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kstd::string second[m[K’
+  238 |     string [01;31m[Ksecond[m[K ;
+      |            [01;31m[K^~~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:112:12:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string second[m[K’ previously declared here
+  112 |     string [01;36m[Ksecond[m[K ;
+      |            [01;36m[K^~~~~~[m[K
+make[2]: *** [CMakeFiles/manager_multiplos_node.dir/build.make:63: CMakeFiles/manager_multiplos_node.dir/src/managerMultiplos.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:235: CMakeFiles/manager_multiplos_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

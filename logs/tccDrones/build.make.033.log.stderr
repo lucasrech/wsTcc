@@ -1,0 +1,73 @@
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:[m[K In function ‘[01m[Kvoid ChildPose0Callback(const ConstPtr&)[m[K’:
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:68:3:[m[K [01;31m[Kerror: [m[K‘[01m[KposeGPSChild0[m[K’ was not declared in this scope; did you mean ‘[01m[KposeGPSChild[m[K’?
+   68 |   [01;31m[KposeGPSChild0[m[K.x = msg->x;
+      |   [01;31m[K^~~~~~~~~~~~~[m[K
+      |   [32m[KposeGPSChild[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:[m[K In function ‘[01m[Kvoid ChildPose1Callback(const ConstPtr&)[m[K’:
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:75:3:[m[K [01;31m[Kerror: [m[K‘[01m[KposeGPSChild1[m[K’ was not declared in this scope; did you mean ‘[01m[KposeGPSChild[m[K’?
+   75 |   [01;31m[KposeGPSChild1[m[K.x = msg->x;
+      |   [01;31m[K^~~~~~~~~~~~~[m[K
+      |   [32m[KposeGPSChild[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:[m[K In function ‘[01m[Kvoid ChildPose2Callback(const ConstPtr&)[m[K’:
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:82:3:[m[K [01;31m[Kerror: [m[K‘[01m[KposeGPSChild2[m[K’ was not declared in this scope; did you mean ‘[01m[KposeGPSChild[m[K’?
+   82 |   [01;31m[KposeGPSChild2[m[K.x = msg->x;
+      |   [01;31m[K^~~~~~~~~~~~~[m[K
+      |   [32m[KposeGPSChild[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:[m[K In function ‘[01m[Kvoid ChildPose3Callback(const ConstPtr&)[m[K’:
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:89:3:[m[K [01;31m[Kerror: [m[K‘[01m[KposeGPSChild3[m[K’ was not declared in this scope; did you mean ‘[01m[KposeGPSChild[m[K’?
+   89 |   [01;31m[KposeGPSChild3[m[K.x = msg->x;
+      |   [01;31m[K^~~~~~~~~~~~~[m[K
+      |   [32m[KposeGPSChild[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:129:5:[m[K [01;31m[Kerror: [m[K‘[01m[KposKid0[m[K’ was not declared in this scope; did you mean ‘[01m[KposKid[m[K’?
+  129 |     [01;31m[KposKid0[m[K = nh.subscribe<geometry_msgs::Point>("/child0/checkPose", 1, &ChildPoseCallback);
+      |     [01;31m[K^~~~~~~[m[K
+      |     [32m[KposKid[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:129:75:[m[K [01;31m[Kerror: [m[K‘[01m[KChildPoseCallback[m[K’ was not declared in this scope; did you mean ‘[01m[KChildPose3Callback[m[K’?
+  129 |     posKid0 = nh.subscribe<geometry_msgs::Point>("/child0/checkPose", 1, &[01;31m[KChildPoseCallback[m[K);
+      |                                                                           [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+      |                                                                           [32m[KChildPose3Callback[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:130:5:[m[K [01;31m[Kerror: [m[K‘[01m[KposKid1[m[K’ was not declared in this scope; did you mean ‘[01m[KposKid[m[K’?
+  130 |     [01;31m[KposKid1[m[K = nh.subscribe<geometry_msgs::Point>("/child1/checkPose", 1, &ChildPoseCallback);
+      |     [01;31m[K^~~~~~~[m[K
+      |     [32m[KposKid[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:131:5:[m[K [01;31m[Kerror: [m[K‘[01m[KposKid2[m[K’ was not declared in this scope; did you mean ‘[01m[KposKid[m[K’?
+  131 |     [01;31m[KposKid2[m[K = nh.subscribe<geometry_msgs::Point>("/child2/checkPose", 1, &ChildPoseCallback);
+      |     [01;31m[K^~~~~~~[m[K
+      |     [32m[KposKid[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:132:5:[m[K [01;31m[Kerror: [m[K‘[01m[KposKid3[m[K’ was not declared in this scope; did you mean ‘[01m[KposKid[m[K’?
+  132 |     [01;31m[KposKid3[m[K = nh.subscribe<geometry_msgs::Point>("/child3/checkPose", 1, &ChildPoseCallback);
+      |     [01;31m[K^~~~~~~[m[K
+      |     [32m[KposKid[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:229:12:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kstd::string data[m[K’
+  229 |     string [01;31m[Kdata[m[K;
+      |            [01;31m[K^~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:106:12:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string data[m[K’ previously declared here
+  106 |     string [01;36m[Kdata[m[K;
+      |            [01;36m[K^~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:231:12:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kstd::string second[m[K’
+  231 |     string [01;31m[Ksecond[m[K ;
+      |            [01;31m[K^~~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:108:12:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string second[m[K’ previously declared here
+  108 |     string [01;36m[Ksecond[m[K ;
+      |            [01;36m[K^~~~~~[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:357:24:[m[K [01;31m[Kerror: [m[K‘[01m[KposeGPSChild0[m[K’ was not declared in this scope; did you mean ‘[01m[KposeGPSChild[m[K’?
+  357 |                        [01;31m[KposeGPSChild0[m[K.x   << ";" << poseGPSChild0.y  << ";" << poseGPSChild0.z  << ";" <<
+      |                        [01;31m[K^~~~~~~~~~~~~[m[K
+      |                        [32m[KposeGPSChild[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:362:24:[m[K [01;31m[Kerror: [m[K‘[01m[KposeGPSChild1[m[K’ was not declared in this scope; did you mean ‘[01m[KposeGPSChild[m[K’?
+  362 |                        [01;31m[KposeGPSChild1[m[K.x   << ";" << poseGPSChild1.y  << ";" << poseGPSChild1.z  << ";" <<
+      |                        [01;31m[K^~~~~~~~~~~~~[m[K
+      |                        [32m[KposeGPSChild[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:367:24:[m[K [01;31m[Kerror: [m[K‘[01m[KposeGPSChild2[m[K’ was not declared in this scope; did you mean ‘[01m[KposeGPSChild[m[K’?
+  367 |                        [01;31m[KposeGPSChild2[m[K.x   << ";" << poseGPSChild2.y  << ";" << poseGPSChild2.z  << ";" <<
+      |                        [01;31m[K^~~~~~~~~~~~~[m[K
+      |                        [32m[KposeGPSChild[m[K
+[01m[K/home/rech/wsTcc/src/tccDrones/src/managerMultiplos.cpp:372:24:[m[K [01;31m[Kerror: [m[K‘[01m[KposeGPSChild3[m[K’ was not declared in this scope; did you mean ‘[01m[KposeGPSChild[m[K’?
+  372 |                        [01;31m[KposeGPSChild3[m[K.x   << ";" << poseGPSChild3.y  << ";" << poseGPSChild3.z  << ";" <<
+      |                        [01;31m[K^~~~~~~~~~~~~[m[K
+      |                        [32m[KposeGPSChild[m[K
+make[2]: *** [CMakeFiles/manager_multiplos_node.dir/build.make:63: CMakeFiles/manager_multiplos_node.dir/src/managerMultiplos.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:235: CMakeFiles/manager_multiplos_node.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:141: all] Error 2

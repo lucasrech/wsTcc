@@ -1,5 +1,0 @@
-[ 66%] Built target getTagPose_node
-[ 66%] [32m[1mLinking CXX executable /home/rech/wsTcc/devel/.private/tccDrones/lib/tccDrones/manager_node[0m
-[ 66%] [32m[1mLinking CXX executable /home/rech/wsTcc/devel/.private/tccDrones/lib/tccDrones/manager_multiplos_node[0m
-[ 83%] Built target manager_multiplos_node
-[100%] Built target manager_node

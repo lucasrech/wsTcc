@@ -1,7 +1,0 @@
-[35m[1mScanning dependencies of target tag_bag_node[0m
-[ 50%] Built target manager_multiplos_node
-[ 50%] Built target getTagPose_node
-[ 75%] Built target manager_node
-[ 87%] [32mBuilding CXX object CMakeFiles/tag_bag_node.dir/src/tagBag.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /home/rech/wsTcc/devel/.private/tccDrones/lib/tccDrones/tag_bag_node[0m
-[100%] Built target tag_bag_node
